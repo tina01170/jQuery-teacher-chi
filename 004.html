@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <style>
+      .eq { width:60px; height:60px; margin:10px; float:left;
+        border:2px solid blue; }
+      .blue { background:blue; }
+
+      
+     
+  </style>
+  <script>
+    $(document).ready(function(){
+
+      //alert($("p").index());
+
+      $("li").click(function(){
+        alert($(this).index());
+      });
+
+      $("div").find(".eq").eq(5).addClass("blue");
+     
+      $('.three li').eq(4).css('background-color','red');
+      $('.three li:eq(1)').css('background-color','yellow');
+    
+      //取得元素屬性的值
+      //alert($("#div1").attr("id"));
+      //alert($("#div1").attr("title"));
+      //alert($("#div1").attr("class"));
+
+
+      $("button").click(function(){
+            $("#dm").attr("href", "https://www.mcut.edu.tw");
+            $("#dm").text("明志科技大學")
+      });
+
+      $(".button").click(function(){
+        $("img").attr("width","300");
+      });
+    });
+
+   
+  </script>
+</head>
+<body>
+  <div id="zero">
+   
+    <div><span>Hello</span></div>
+    <h2>Hello Again</h2>
+    <p>And Again</p>
+    <h4>4 Hello Again</h2>
+  </div>
+  <div class="one">
+    <p>点击列表项可获得其相对于同胞元素的 index 位置：</p>
+    <ul>
+    <li>Coffee</li>
+    <li>Milk</li>
+    <li>Soda</li>
+  </div>
+  <br>
+  <div class="two">
+      <div class="eq"></div>
+      <div class="eq"></div>
+      <div class="eq"></div>
+    
+      <div class="eq"></div>
+      <div class="eq"></div>
+      <div class="eq"></div>
+  </div>
+  <br><br><br><br><br>
+
+  <div class="three">
+    <ul>
+      <li>list item 1</li>
+      <li>list item 2</li>
+      <li>list item 3</li>
+      <li>list item 4</li>
+      <li>list item 5</li>
+    </ul>
+    
+  </div>
+  <br><br><br>
+
+  <div class="four">
+   <div id="div1" title="hello" class="box"></div>
+  </div>
+
+  <div class="five">
+    <img src="bird.jpg">
+    <button class="button">更改圖片大小</button>
+    <p><a href="https://www.deepmind.com.tw" id="dm">深智數位</a></p>
+    <button>更改href和連結名稱</button>
+    <p>程式說明 : 按鈕可以更改href屬性和連結名稱</p>
+    
+  </div>
+    
+</body>
+</html>

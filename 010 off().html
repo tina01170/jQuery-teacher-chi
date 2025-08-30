@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <style>
+      .div1,.div2 {
+        width:150px;
+        height: 150px;
+        border:1px solid #000;
+       
+      }
+      
+
+      .cancel {
+        padding:10px;
+        font-size:16px;
+      }
+  </style>
+  <script>
+    $(document).ready(function(){
+        //向元素添加多个事件处理程序。
+        $(".div1").on({
+          mouseover:function(){$(this).css("background-color","lightgray");},  
+          mouseout:function(){$(this).css("background-color","lightblue");}, 
+          click:function(){$(this).css("background-color","yellow");}  
+        });
+
+        $(".div2").on({
+            click:function() {
+                alert("world")
+            },
+            mouseover:function() {
+              $(this).css("background-color",'red')
+            },
+            mouseout:function() {
+              $(this).css("background-color",'blue')
+            }
+        });
+
+        $("p").click(function(){
+            $(this).css("background-color",'lightcyan');
+        })
+
+        $(".cancel").click(function(){
+            //取消所有事件
+            //$(".div2").off(); 
+
+            //取消某一個事件的所有函數
+            $(".div2").off("click"); 
+        });
+     
+
+    });
+
+   
+  </script>
+</head>
+<body>
+
+    
+      <div class="div1"></div>
+      <br><br><br><br>
+      <div class="div2"></div>
+
+      <br><br>
+      <p>Move the mouse pointer over this paragraph.</p>
+      <br><br><br><br>
+      <button class="cancel">取消事件</button>
+  
+</body>
+</html>

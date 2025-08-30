@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <style>
+        .two {
+          width: 200px;
+          height: 200px;
+          padding: 35px;
+          
+          background-color: antiquewhite;
+          position: relative;
+        }
+    
+  </style>
+  <script>
+    $(document).ready(function(){
+        $(".btn1").click(function(){
+          var x=$("p").offset();
+          alert("上: " + x.top + " 左: " + x.left);
+        });
+     
+        $(".btn2").click(function(){
+          var x=$("h3").position();
+          alert("上: " + x.top + " 左: " + x.left);
+        });
+
+        
+    });
+
+   
+  </script>
+</head>
+<body>
+    <p>这是一个段落。</p>
+    <button class="btn1">返回p元素的偏移坐标</button>
+    <br><br><br>
+
+    <div class="two">
+
+        <h3>这是一个段落。</h3>
+        <button class="btn2">返回p元素的偏移坐标</button>
+    </div>
+    <br><br><br>
+
+   
+</body>
+</html>

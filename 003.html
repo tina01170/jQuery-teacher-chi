@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <style>
+    
+
+      
+     
+  </style>
+  <script>
+    $(document).ready(function(){
+      $("p").prev().css("background", "yellow");
+     
+      $("p").next().css("background", "#ACD6FF");
+
+      $('li.third-item').prev().css('background-color', 'red');
+
+      $('li.third-item').next().css('background-color', '#ACD6FF');
+    
+    
+      $("h3").prev(".selected").css("background", "blue");
+
+      $("ul").find(".box").css('background-color', '#ACD6FF');
+
+      //$("ul").find("[name=hello]").css('background-color', '#ACD6FF');
+    });
+
+   
+  </script>
+</head>
+<body>
+  <div class="one">
+      <div><span>Hello</span></div>
+      <h2>Hello Again</h2>
+      <p>p: And Again</p>
+      <h4>4 Hello Again</h2>
+  </div>
+  <br>
+  <div class="two">
+    <ul>
+      <li>list item 1</li>
+      <li>list item 2</li>
+      <li class="third-item">list item 3</li>
+      <li>list item 4</li>
+      <li>list item 5</li>
+    </ul>
+  </div>
+  <br>
+
+  <div class="three">
+    <h4>Hello</h4>
+    <h4 class="three">Hello Again three</h4>
+    <h4 class="selected">Hello Again</h4>
+    
+    <h3>And Again</h3>
+    
+  </div>
+  <br><br><br>
+
+  <div class="four">
+    <ul>
+      <li class="box">list item 1</li>
+      <li name="hello">list item 2</li>
+      <li class="box">list item 3</li>
+      <li>list item 4</li>
+      <li>list item 5</li>
+    </ul>
+    <ol>
+      <li>list item 1</li>
+      <li>list item 2</li>
+      <li>list item 3</li>
+      <li>list item 4</li>
+      <li>list item 5</li>
+    </ol>
+  </div>
+</body>
+</html>

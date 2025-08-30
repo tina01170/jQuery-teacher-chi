@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <style>
+      /*#div1 { 
+        width:300px; 
+        height:200px; 
+        background-color: red;
+        border:1px solid #000;
+        padding:10px;
+        margin:10px;
+      }*/
+
+  </style>
+  <script>
+        $(document).ready(function() {
+          //alert($("#div1").css("width"));
+          //alert($("#div1").width());
+          //alert($("#div1").innerWidth());  //with+padding
+          //alert($("#div1").outerWidth());   //with+border+padding
+          //alert($("#div1").outerWidth(true)); //with+border+padding+margin
+          
+          $("button").click(function(){
+              alert("div的宽度: " + $("div").width());
+              alert("Inner width of div: " + $("div").innerWidth());
+              alert("Inner width of div: " + $("div").outerWidth());
+              alert("Inner width of div: " + $("div").outerWidth(true));
+
+              alert("div的高度: " + $("div").height());
+              alert("Inner hidth of div: " + $("div").innerHeight());
+              alert("Inner hidth of div: " + $("div").outerHeight());
+              alert("Inner hidth of div: " + $("div").outerHeight(true));
+          });
+
+        });
+  </script>
+</head>
+<body>
+  <div style="height:100px;
+              width:300px;
+              padding:10px;
+              margin:10px;
+              border:1px solid blue;
+              background-color:lightblue;"></div><br>
+  <button>显示div的宽度</button>
+
+  
+  
+</body>
+</html>

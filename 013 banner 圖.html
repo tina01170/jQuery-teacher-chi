@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>banner 圖</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      img {
+        border:none;
+      }
+
+      body {
+        background-color: lightblue;
+      }
+
+      .play {
+        width: 300px;
+        height: 150px;
+        position: relative;
+        margin:150px auto 0;
+        z-index: 9;
+        overflow: hidden;
+      }
+
+      ol {
+        position: absolute;
+        bottom:10px;
+        right:15px;
+        z-index: 2;
+      }
+
+      ol li {
+        float:left;
+        display: inline;
+        margin-right: 3px;
+        color:#fff;
+        background-color: rgba(0,0,0,0.5);
+        padding:0 5px;
+        border:1px solid #ccc;
+        cursor: pointer;
+      }
+
+      .active {
+        padding:0 3px;
+        font-weight: bold;
+        background-color:#ffb442;
+        position: relative;
+        /*bottom: 2px;*/
+      }
+
+      ul {
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: 1;
+      }
+
+      ul li {
+        float: left;
+        width: 300px;
+        height: 150px;
+      }
+
+      ul img {
+        float: left;
+        width: 300px;
+        height: 150px;
+      }
+    
+  </style>
+  <script>
+     $(function(){
+        var aBtns = $("#play ol li");
+        var oUl= $("#play ul");
+        var aList= oUl.find("li");
+
+        var iNow =0; //展示當前圖片的下標
+        var timer = null;
+
+        /* 有定時器滑動*/
+        aBtns.click(function(){
+
+          iNow = $(this).index();
+          tab();
+        })
+
+        
+        $("#play").mouseenter(function(){
+          clearInterval(timer);
+        }).mouseleave(function(){
+            timer = setInterval(function() {
+                iNow++;
+                tab();
+            }, 2000 )
+        })
+
+        /*定時器*/
+        timer = setInterval(function() {
+            iNow++;
+            tab();
+        }, 2000 )
+        
+        
+        
+        function tab() {
+
+          // 先把所有按鈕的class 名稱取消，再把對應位置的 class 添加 active
+          aBtns.attr("class",'').eq(iNow).attr("class",'active');
+            /*
+              if (iNow == aBtns.size()) {
+                    aBtns.eq(0).attr("class",'active');
+              }*/
+    
+          oUl.animate({
+              top:-150 * iNow
+
+          },500,function(){
+           /*
+            if (iNow == aBtns.size()) {
+                iNow = 0;
+                oUl.css("top",'0')
+            }*/
+             
+          })
+          document.title = iNow;
+        }
+        
+     })
+  </script>
+</head>
+<body>
+    <div class="play" id="play">
+      <ol>
+          <li class="active">1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          
+      </ol>
+      <ul>
+        <li><a href="#"><img src="img/013-01.png" alt="廣告1"></a></li>
+        <li><a href="#"><img src="img/013-02.png" alt="廣告2"></a></li>
+        <li><a href="#"><img src="img/013-03.png" alt="廣告3"></a></li>
+        <li><a href="#"><img src="img/013-04.png" alt="廣告4"></a></li>
+        <li><a href="#"><img src="img/013-05.png" alt="廣告5"></a></li>
+        <li><a href="#"><img src="img/013-01.png" alt="廣告1"></a></li>
+      </ul>
+
+    </div>
+</body>
+</html>

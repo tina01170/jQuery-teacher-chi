@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <style>
+
+      #div1,#div2 {
+        width:150px;
+        height: 150px;
+        background-color: cornflowerblue;
+      }
+
+      p {
+        font-size: 28px;
+      }
+      .change {
+        font-size:36px;
+        color:red;
+      }
+
+      .one,
+      .three {
+        display: flex;
+      }
+
+      .div1,.div2 {
+        width:150px;
+        height: 150px;
+        border:1px solid #000;
+      }
+
+      #div2,
+      .div2 {
+        margin-left: 30px;
+      }
+
+      h5,h6 {
+        font-size: 28px;
+      }
+  </style>
+  <script>
+    $(document).ready(function(){
+      
+      // 給事件增加一個函數
+      $("#div1").on("click",function(){
+          alert("hello world");
+      });
+
+      //向元素添加多个事件处理程序。中間以空格隔開
+      var i = 0;
+      $("#div2").on("cilick mouseover",function(){
+          $(this).html(i++);
+      });
+
+      $("p").on("mouseover mouseout",function(){
+          $("p").toggleClass("change");
+      });
+
+
+      //向元素添加多个事件处理程序。
+      $(".div1").on({
+        mouseover:function(){$(this).css("background-color","lightgray");},  
+        mouseout:function(){$(this).css("background-color","lightblue");}, 
+        click:function(){$(this).css("background-color","yellow");}  
+      });
+
+      $(".div2").on({
+          click:function() {
+              alert("world")
+          },
+          mouseover:function() {
+            $(this).css("background-color",'red')
+          },
+          mouseout:function() {
+            $(this).css("background-color",'blue')
+          }
+
+
+      });
+
+      // 事件委託
+      $("ul").on("click","li",function(){
+          $(this).css("background-color",'yellow')
+      });
+
+
+      var i=6
+      $(".btn1").click(function(){
+        $('<li>${i++}</li>').appendTo($("ul"));
+      });
+
+
+      $("button").click(function(){
+        $("<p>This is a new paragraph.</p>").insertAfter("button");
+      });
+      
+    });
+
+   
+  </script>
+</head>
+<body>
+  <div class="one">
+    <div id="div1"></div>
+    <div id="div2"></div>
+  </div>
+  <br><br>
+  <p>Move the mouse pointer over this paragraph.</p>
+
+  <div class="three">
+    <div class="div1"></div>
+    <div class="div2"></div>
+  </div>
+  <br><br>
+  <div id="div3">
+    <ul>
+      <li>11111</li>
+      <li>22222</li>
+      <li>33333</li>
+      <li>44444</li>
+    </ul>
+    <button class="btn1">增加事件</button>
+  </div>
+
+  <div style="background-color:yellow">
+    <h6>This is a paragraph.</h6>
+    <h5>Click any p element to make it disappear. Including this one.</h5>
+    <button>Insert a new p element after this button</button>
+  </div>
+</body>
+</html>

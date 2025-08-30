@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> prepend,append</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <style>
+      .selected { color: aqua;}
+  </style>
+  <script>
+    $(document).ready(function(){
+
+      $(".btn3").click(function(){
+          //$("p").prepend("<b>Hello world!</b>");
+      });  
+
+      $(".btn3").click(function(){
+          //$(".selected").prepend("<b>prepend!</b>");
+          
+          $("<b>prepend</b>").prependTo(".selected");
+
+      });  
+
+      $(".btn4").click(function(){
+          //$(".selected").append("<b>append!</b>");
+          $("<b>append</b>").appendTo(".selected");
+
+      });  
+
+      $(".btn5").click(function(){
+          //$("#div1").remove();
+          $("p").remove(".notintro");
+      });
+
+      
+
+      $(".btn6").click(function(){
+        $("#div1").empty();
+      });
+    });
+
+   
+  </script>
+</head>
+<body>
+    
+
+    <div class="three">
+
+      <h3>prepend 與 append</h3>
+
+      <h4 class="selected">Hello Again</h4>
+      
+      <h3>欢迎来到我的主页</h3>
+        
+      
+      <button class="btn3">在每个 p 元素的开头插入内容</button>
+      <button class="btn4">在每个 p 元素的結尾插入内容</button>
+    </div>
+
+    <div class="three">
+
+      <h3>remove 與 empty</h3><br>
+
+      <div id="div1" style="height:200px;width:300px;border:1px solid black;background-color:yellow;">
+        <p>我的名字叫 Donald。</p>
+        <p class="notintro">我住在 Duckburg。</p>
+        <p class="notintro">我爱 Duckburg。</p>
+        <p>我最好的朋友是 Mickey。</p>
+
+      </div>
+      <button class="btn5">删除 div(remove) 元素</button>
+      
+      <button class="btn6">删除 div(empty) 元素</button>
+    </div>
+</body>
+</html>

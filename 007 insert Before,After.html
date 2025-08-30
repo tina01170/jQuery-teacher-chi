@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>insert Before,After</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <style>
+      .selected { color: aqua;}
+  </style>
+  <script>
+    $(document).ready(function(){
+
+      $(".btn1").click(function(){
+        $("<span>這是span，Before</span>").insertBefore("p").css("background",'red');
+      
+     
+      });
+
+      $(".btn2").click(function(){
+       
+        $("<span>這是span,After</span>").insertAfter("p");
+    
+      });
+
+      $(".btn3").click(function(){
+       
+       $("h3").before("<span>這是span,After</span>").css("background",'red');;
+   
+      });
+
+      $(".btn4").click(function(){
+       
+       $("h3").after("<span>這是span,After</span>");
+   
+      });
+
+      
+    });
+
+   
+  </script>
+</head>
+<body>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <br>
+    <br>
+    <br>
+    <button class="btn1">在P元素之前插入span元素</button>
+    <button class="btn2">在P元素之"後"插入span元素</button>
+
+    <div class="three">
+
+      
+
+      <h3>欢迎来到我的主页</h3>
+        <br>
+      
+      <button class="btn3">在每个 p 元素的开头插入内容</button>
+      <button class="btn4">在每个 p 元素的結尾插入内容</button>
+    </div>
+</body>
+</html>

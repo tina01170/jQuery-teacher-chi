@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <style>
+    
+
+      
+     
+  </style>
+  <script>
+    $(document).ready(function(){
+      
+      $("p").filter(".intro").css("background-color","#B9B9FF");
+
+      $('li').has('ul').css('background-color', '#C48888');
+
+      $("p").not(".notintro").css("background-color","#ACD6FF");
+
+    });
+
+   
+  </script>
+</head>
+<body>
+  <div class="one">
+    <h1>欢迎来到我的主页</h1>
+    <p>我的名字叫 Donald。</p>
+    <p class="intro">我住在 Duckburg。</p>
+    <p class="intro">我爱 Duckburg。</p>
+    <p>我最好的朋友是 Mickey。</p>
+  </div>
+
+  <br><br><br>
+
+  <div class="two">
+    <ul>
+      <li>list item 1</li>
+      <li>list item 2
+        <ul>
+          <li>list item 2-a</li>
+          <li>list item 2-b</li>
+        </ul>
+      </li>
+      <li>list item 3</li>
+      <li>list item 4</li>
+    </ul>
+  </div>
+  <br><br><br>
+
+  <div class="three">
+    
+    <p>我的名字叫 Donald。</p>
+    <p class="notintro">我住在 Duckburg。</p>
+    <p class="notintro">我爱 Duckburg。</p>
+    <p>我最好的朋友是 Mickey。</p>
+  </div>
+
+</body>
+</html>

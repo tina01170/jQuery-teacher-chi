@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>banner 圖</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      
+
+      body {
+        
+      }
+
+      .container {
+        position: relative;
+        margin:200px auto 0;
+        width: 600px;
+      }
+
+      .play {
+       /* width: 300px;
+        height: 150px;*/
+        position: relative;
+        margin:150px auto 0;
+       
+        /*overflow: hidden;*/
+      }
+
+      ol {
+        position: absolute;
+        top:110px;
+        left:15px;
+        z-index: 2;
+      }
+
+      
+      ol li {
+        float:left;
+        display: inline;
+        margin-right: 3px;
+        color:#fff;
+        background-color: rgba(0,0,0,0.5);
+        padding:0 5px;
+        border:1px solid #ccc;
+        cursor: pointer;
+      }
+
+      .active {
+        padding:0 3px;
+        font-weight: bold;
+        background-color:#ffb442;
+        position: relative;
+        /*bottom: 2px;*/
+      }
+
+      #list {
+        width: 1700px;
+        height: 150px;
+        position:absolute;
+            z-index: 1;
+      }
+
+      ul li {
+       
+      }
+
+      ul img {
+        
+      }
+    
+  </style>
+  <script>
+     $(function(){
+        
+        
+     })
+  </script>
+</head>
+<body>
+    <div class="container" id="container">
+      <div id="list">
+       <img src="img/013-01.png" alt="廣告1">
+        <img src="img/013-02.png" alt="廣告2">
+        <img src="img/013-03.png" alt="廣告3">
+        <img src="img/013-04.png" alt="廣告4">
+        <img src="img/013-05.png" alt="廣告5">
+       
+      </div>
+
+      
+      <ol>
+          <li class="active">1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          
+      </ol>
+      
+    </div>
+</body>
+</html>
